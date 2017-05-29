@@ -13,13 +13,14 @@ $this->titre='Mon blog - '.$this->nettoyer($billet['titre']);?>
 
 
     <div class="row"">
-    <div class="col-sm-8 col-sm-offset-2"
-        <header>
+    <div class="col-sm-8 col-sm-offset-2 thumbnail" style="background-color: #e8daac">
+        <header style="margin-top :0px; padding-left:10px;">
             <h2> Réponses à <?=$billet['titre']?></h2>
+            <hr style="color:black">
 
         </header>
 
-<ul class="media-list ">
+<ul class="media-list" style="padding-left :10px;">
     <li class="media-thumbnail">
         <div class="media-body">
 <?php include ("__commentaires.php")?>

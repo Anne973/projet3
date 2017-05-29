@@ -38,16 +38,16 @@
     <div class="row">
 
         <div class="col-sm-12" id="bloc_auteur">
-            <h2>L'auteur</h2>
+            <h3>L'auteur</h3>
             <img src="Contenu/images/writer.png" alt="">
-            <h3>Jean Forteroche</h3>
+            <h4>Jean Forteroche</h4>
             <p> Acteur et écrivain, je suis passionné depuis toujours par les grandes étendues sauvages de l'Alaska.
                 J'en ai fait le cadre de ce roman, que j'espère vous m'aiderez à écrire!
             </p>
         </div>
 
         <div class="col-sm-12" id="bloc-resume">
-            <h2>Résumé</h2>
+            <h3>Résumé</h3>
             <p>Procedente igitur mox tempore cum adventicium nihil inveniretur, relicta ora maritima in Lycaoniam
                 adnexam Isauriae se contulerunt ibique densis intersaepientes itinera praetenturis provincialium et
                 viatorum opibus pascebantur</p>
