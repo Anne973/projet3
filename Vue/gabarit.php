@@ -11,7 +11,7 @@
     <link href="Contenu/css/style.css" rel="stylesheet" >
     <script src="Contenu/js/jquery.js"></script>
     <script src="Contenu/js/bootstrap.min.js"></script>
-    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=qq15uyx3s076tus4hc5xw0xtxurq31zffmmha0ddfkujiwjj"></script>
     <script>tinymce.init({ selector:'#textarea' });</script>
 
     <title><?= $titre ?></title><!-- Element specifique -->

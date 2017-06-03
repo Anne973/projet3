@@ -21,11 +21,6 @@ class ControleurBillet extends Controleur {
         $billet = $this->billet->getBillet($idBillet);
         $commentaires = $this->commentaire->getCommentairesParents($idBillet);
 
-
-        /*foreach($commentaires as $commentaire){
-            foreach ($commentairesEnfants as $commentaireEnfant){
-                if ($commentaire['id']==$commentaireEnfant['PARENT_ID']){$commentaire['reponse']=$commentaireEnfant; }}}
-*/
         $this->genererVue(array('billet' => $billet,
             'commentaires' => $commentaires, 'modeleCom'=>$this->commentaire));
     }
@@ -40,5 +35,27 @@ class ControleurBillet extends Controleur {
 
         // Exécution de l'action par défaut pour actualiser la liste des billets
         $this->executerAction("index");
+    }
+
+    public function signaler() {
+        $idCommentaire =$this->requete->getParametre("id");
+        $com = $this->commentaire->getCommentaire($idCommentaire);
+        $this->commentaire->signalerCommentaire($idCommentaire);
+        $this->rediriger("billet","index/".$com['bilid']);
+    }
+
+    public function repondre() {
+        $idCommentaire= $this->requete->getParametre("id");
+        $com = $this->commentaire->getCommentaire($idCommentaire);
+        $parentid=$idCommentaire;
+        $depth=$com['depth']+1;
+
+        $idBillet=$com["bilid"];
+
+        $auteur = $this->requete->getParametre("auteur");
+        $contenu = $this->requete->getParametre("contenu");
+
+
+        $this->commentaire->ajouterCommentaire($auteur, $contenu, $idBillet, $depth, $parentid);
     }
 }

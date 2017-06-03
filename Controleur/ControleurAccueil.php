@@ -21,7 +21,7 @@ class ControleurAccueil extends Controleur {
         $nbBillets= $this->billet->getNombreBillets();
         $nbPages = ceil($nbBillets/5);
         $billets = $this->billet->getBillets($page);
-        $liste=$this->billet->getListe();
+        $liste=$this->billet->getListeReduite();
         $this->genererVue(array('billets' => $billets,'page'=>$page, 'nbBillets'=>$nbBillets,
             'nbPages'=>$nbPages, 'liste'=>$liste));
 

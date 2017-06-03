@@ -1,6 +1,7 @@
 <?php $this->titre = 'Mon blog'; ?>
 
 <section class="col-sm-8" id="contenu">
+    <a href="admin">Accès admin</a>
     <?php
 
 

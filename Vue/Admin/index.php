@@ -28,18 +28,39 @@ $this->titre = "Mon Blog - Administration"?>
     <h4>Commentaires signalés</h4>
     <p>Aucun commentaire signalé pour le moment</p>
 </div>
+
+    <div class="alert alert-info">
+
+            <h4>Liste des épisodes</h4>
+
+        <ul class="list-group">
+            <?php foreach ($tousBillets as $elementBillet) { ?><li class="list-group-item">
+                <?= $elementBillet['titre']; ?> <a href="<?= "adminBillet/index/" . $elementBillet['id']; ?>" ><button class="btn btn-primary btn-xs pull-right">Afficher</button>
+
+                </a>
+                </li>
+                <?php
+            }
+            ?>
+        </ul>
+    </div>
+
+
 </div>
-    <form action="" method="post" class="col-sm-8 thumbnail" style="background-color: grey;  padding:10px;">
+    <form action="admin/inserer" method="post" class="col-sm-8 thumbnail" style="background-color: grey;  padding:10px;">
     <legend>Saisir un épisode</legend>
         <div class="form-group">
         <label for="titre">Titre de l'épisode :</label>
-        <input type="text" id="text" class="form-control">
+        <input type="text" id="titre" name="titre" class="form-control">
         </div>
-        <div class="form-group">
+        <div id ="textcontrol" class="form-group">
         <label for="textarea">Texte :</label>
-        <textarea name="" id="textarea" rows="10" class="form-control"></textarea>
+        <textarea name="contenu" id="textarea" rows="10" class="form-control"></textarea>
         </div>
         <button type="submit" class="btn btn-success btn-lg">Envoyer</button>
     </form>
 </div>
+
+
+
 </div>

@@ -19,6 +19,20 @@ class ControleurAdmin extends ControleurSecurise
         $nbBillets=$this->billet->getNombreBillets();
         $nbCommentaires = $this->commentaire->getNombreCommentaires();
         $login=$this->requete->getSession()->getAttribut("login");
-        $this->genererVue(array('nbBillets'=>$nbBillets,'nbCommentaires'=>$nbCommentaires, 'login'=>$login));
+        $tousBillets=$this->billet->getListeExhaustive();
+        $this->genererVue(array('nbBillets'=>$nbBillets,'nbCommentaires'=>$nbCommentaires, 'login'=>$login, 'tousBillets'=>$tousBillets));
     }
+
+    // Insère un nouveau billet
+    public function inserer() {
+
+        $titre = $this->requete->getParametre("titre");
+        $contenu = $this->requete->getParametre("contenu");
+
+        $this->billet->ajouterBillet($titre, $contenu);
+
+        // Exécution de l'action par défaut pour réactualiser la page
+        $this->executerAction("index");
+    }
+
 }

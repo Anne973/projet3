@@ -23,15 +23,20 @@ class Commentaire extends Modele{
         return $comments->fetchAll();
     }
 
-
+    public function getCommentaire($id)
+    {
+        $sql = ('SELECT COM_ID AS id, BIL_ID AS bilid, COM_DATE AS date, COM_AUTEUR AS auteur, COM_CONTENU AS contenu, COM_DEPTH AS depth FROM T_COMMENTAIRE WHERE COM_ID=?');
+        $comment = $this->executerRequete($sql, array($id));
+        return $comment->fetch();
+    }
 
 
     //AJoute des commentaires dans la base
-    public function ajouterCommentaire($auteur,$contenu,$idBillet)
+    public function ajouterCommentaire($auteur,$contenu,$idBillet, $depth=0, $parentid =NULL)
     {
-        $sql = 'INSERT INTO T_COMMENTAIRE (COM_DATE, COM_AUTEUR, COM_CONTENU, BIL_ID) VALUES (NOW(), ?, ?, ?)';
+        $sql = 'INSERT INTO T_COMMENTAIRE (COM_DATE, COM_AUTEUR, COM_CONTENU, BIL_ID, COM_DEPTH, PARENT_ID) VALUES (NOW(), ?, ?, ?, ?, ?)';
 
-        $this->executerRequete($sql, array($auteur,$contenu, $idBillet));
+        $this->executerRequete($sql, array($auteur,$contenu, $idBillet, $depth, $parentid));
     }
 
     //Renvoie le nombre total de commentaires
@@ -41,6 +46,13 @@ class Commentaire extends Modele{
         $resultat = $this->executerRequete($sql);
         $ligne=$resultat->fetch();
         return $ligne['nbCommentaires'];
+    }
+    //Signale un commentaire
+    public function signalerCommentaire($idCommentaire)
+    {
+        $sql ='UPDATE T_COMMENTAIRE SET COM_SIGN=1 WHERE COM_ID =?';
+
+        $this->executerRequete($sql,array($idCommentaire));
     }
 }
 /**

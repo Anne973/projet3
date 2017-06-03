@@ -4,10 +4,22 @@ use \MonBlog\Framework\Modele;
 
 class Billet extends Modele
 {
+    //Renvoie la liste exhaustive des billets
+    public function getListeExhaustive()
+    {
 
-    // Renvoie la liste des billets du blog
+        $sql = 'select BIL_ID as id, BIL_DATE as date,'
+            . ' BIL_TITRE as titre, BIL_CONTENU as contenu from T_BILLET'
+            . ' order by BIL_ID desc';
+        $tousBillets = $this->executerRequete($sql);
 
-    public function getListe()
+        return $tousBillets;
+
+    }
+
+    //Renvoie la liste des 10 derniers billets du blog
+
+    public function getListeReduite()
     {
 
         $sql = 'select BIL_ID as id, BIL_DATE as date,'
@@ -51,7 +63,25 @@ class Billet extends Modele
         return $ligne['nbBillets'];
 
     }
+    //Ajoute des billets dans la base
+    public function ajouterBillet($titre,$contenu)
+    {
+        $sql = 'INSERT INTO T_BILLET (BIL_DATE, BIL_TITRE, BIL_CONTENU) VALUES (NOW(), ?, ?)';
 
+        $this->executerRequete($sql, array($titre,$contenu));
+    }
+
+    //Modifie des billets dans la base
+    public function updateBillet ($titre,$contenu,$idBillet){
+       $sql = 'UPDATE T_BILLET SET BIL_DATE=NOW(), BIL_TITRE=?, BIL_CONTENU=? WHERE BIL_ID=?';
+       $this->executerRequete($sql, array($titre,$contenu,$idBillet));
+    }
+
+    //Supprime les billets dans la base
+    public function deleteBillet ($idBillet){
+        $sql ='DELETE FROM T_BILLET WHERE BIL_ID=?';
+        $this->executerRequete($sql, array($idBillet));
+    }
 }
 
 
