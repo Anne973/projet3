@@ -37,25 +37,26 @@ class ControleurBillet extends Controleur {
         $this->executerAction("index");
     }
 
-    public function signaler() {
-        $idCommentaire =$this->requete->getParametre("id");
+    public function signaler()
+    {
+        $idCommentaire = $this->requete->getParametre("id");
         $com = $this->commentaire->getCommentaire($idCommentaire);
         $this->commentaire->signalerCommentaire($idCommentaire);
-        $this->rediriger("billet","index/".$com['bilid']);
+        $this->rediriger("billet", "index/" . $com['bilid']);
     }
 
-    public function repondre() {
-        $idCommentaire= $this->requete->getParametre("id");
-        $com = $this->commentaire->getCommentaire($idCommentaire);
-        $parentid=$idCommentaire;
-        $depth=$com['depth']+1;
+    public function repondre()
+        {
+            $idCommentaire = $this->requete->getParametre("id");
+            $comment = $this->commentaire->getCommentaire($idCommentaire);
 
-        $idBillet=$com["bilid"];
+            $auteur = $this->requete->getParametre("auteur");
+            $contenu = $this->requete->getParametre("contenu");
+            $idBillet = $comment['bilid'];
+            $depth = $comment['depth'] + 1;
+            $parentid = $idCommentaire;
+            $this->commentaire->ajouterCommentaire($auteur, $contenu, $idBillet, $depth, $parentid);
 
-        $auteur = $this->requete->getParametre("auteur");
-        $contenu = $this->requete->getParametre("contenu");
-
-
-        $this->commentaire->ajouterCommentaire($auteur, $contenu, $idBillet, $depth, $parentid);
+        }
     }
-}
+

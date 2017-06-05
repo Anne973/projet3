@@ -20,10 +20,10 @@ $this->titre = 'Mon blog - ' . $this->nettoyer($billet['titre']); ?>
 
     </header>
 
-    <ul class="media-list" style="padding-left :10px;">
-        <li class="media-thumbnail">
+    <ul  class="media-list" >
+        <li class="media" style="padding-left: 5px;>
             <div class="media-body">
-                <?php include("__commentaires.php") ?>
+               <?php include("__commentaires.php") ?>
 
                 <script>
                     $(function () {
@@ -58,7 +58,7 @@ $this->titre = 'Mon blog - ' . $this->nettoyer($billet['titre']); ?>
         </div>
         <div class="form-group">
             <label for="commentaire">Votre message :</label>
-            <textarea class="form-control" name="contenu" required></textarea>
+            <textarea class="form-control" name="contenu"  required></textarea>
         </div>
         <input type="hidden" name="id" value="<?= $billet['id'] ?>">
         <button class="btn btn-primary" type="submit" value="Commenter"><span

@@ -18,9 +18,12 @@ class ControleurAdmin extends ControleurSecurise
     {
         $nbBillets=$this->billet->getNombreBillets();
         $nbCommentaires = $this->commentaire->getNombreCommentaires();
+        $nbCommentairesSignales =$this->commentaire->getNombreCommentairesSignales();
         $login=$this->requete->getSession()->getAttribut("login");
         $tousBillets=$this->billet->getListeExhaustive();
-        $this->genererVue(array('nbBillets'=>$nbBillets,'nbCommentaires'=>$nbCommentaires, 'login'=>$login, 'tousBillets'=>$tousBillets));
+        $listecomments=$this->commentaire->getListeCommentaires();
+        $commentairesSignales=$this->commentaire->getCommentairesSignales();
+        $this->genererVue(array('nbBillets'=>$nbBillets,'nbCommentaires'=>$nbCommentaires,'nbCommentairesSignales'=>$nbCommentairesSignales, 'login'=>$login, 'tousBillets'=>$tousBillets, 'listecomments'=>$listecomments,'commentairesSignales'=>$commentairesSignales));
     }
 
     // Insère un nouveau billet
@@ -35,4 +38,15 @@ class ControleurAdmin extends ControleurSecurise
         $this->executerAction("index");
     }
 
+    public function supprimerCommentaire(){
+        $idCommentaire=$this->requete->getParametre("id");
+        $this->commentaire->deleteCommentaire($idCommentaire);
+        $this->rediriger(admin);
+    }
+
+    public function validerCommentaire(){
+        $idCommentaire=$this->requete->getParametre("id");
+        $this->commentaire->validateCommentaire($idCommentaire);
+        $this->rediriger(admin);
+    }
 }

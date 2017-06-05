@@ -22,12 +22,48 @@ $this->titre = "Mon Blog - Administration"?>
             <span class="badge"><?=$this->nettoyer($nbCommentaires)?></span>
             Nombre de commentaires
         </li>
+        <li class="list-group-item">
+            <span class="badge"><?=$this->nettoyer($nbCommentairesSignales)?></span>
+            Nombre de commentaires signalés
+        </li>
     </ul>
 </div>
+    <div class="alert alert-info">
+
+        <h4>Liste des commentaires</h4>
+
+        <ul class="list-group">
+            <?php foreach ($listecomments as $elementcomment) { ?><li class="list-group-item">
+                <p>Le <?=$elementcomment['date'];?></p> <p style="overflow-wrap: break-word"><?= $elementcomment['contenu'];?> par <em><?=$elementcomment['auteur']?></em>
+
+
+                </li>
+                <?php
+            }
+            ?>
+        </ul>
+    </div>
+
 <div class="alert alert-danger">
     <h4>Commentaires signalés</h4>
-    <p>Aucun commentaire signalé pour le moment</p>
+    <ul class="list-group">
+        <?php foreach ($commentairesSignales as $commentaireSignale) { ?><li class="list-group-item">
+            <p style="overflow-wrap: break-word"><?= $commentaireSignale['contenu']; ?></p> <p>par <em><?= $commentaireSignale['auteur']; ?></em> le <?= $commentaireSignale['date']; ?></p>
+
+            <form action="admin/validerCommentaire" method="post"style="display:inline;"><button type="submit" class="btn btn-success btn-xs">OK</button>
+                <input type="hidden" name="id" value="<?= $commentaireSignale['id']; ?>">
+            </form>
+
+            <form action="admin/supprimerCommentaire" method="post" style="display:inline;"><button type="submit" class="btn btn-warning btn-xs" >Supprimer</button>
+                <input type="hidden" name="id" value="<?= $commentaireSignale['id']; ?>">
+            </form>
+            </li>
+            <?php
+        }
+        ?>
+    </ul>
 </div>
+
 
     <div class="alert alert-info">
 

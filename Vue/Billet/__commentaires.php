@@ -1,12 +1,13 @@
 <?php foreach ($commentaires as $commentaire): ?>
     <div class="thumbnail" style="background-color: #b3ad99;">
         <h4 class="media-heading" style="margin-top:10px; margin-left :10px;"><?= $commentaire['auteur'] ?></h4>
-        <p style="margin-top:10px; margin-left:10px;"><?= $commentaire['contenu'] ?></p>
+        <p style="margin-top:10px; margin-left:10px; overflow-wrap: break-word"><?= $commentaire['contenu'] ?></p>
     </div>
-    <div id="html">
+
+    <div>
         <button data-toggle="modal" data-backdrop="false" href="#formulaire" class="btn btn-success btn-xs">Répondre
         </button>
-        <form action="billet/signaler" method="post">
+        <form action="billet/signaler" method="post" style="display:inline;">
             <input type="hidden" name="id" value="<?= $commentaire['id'] ?>">
             <button type="submit" class="btn btn-warning btn-xs">Signaler</button>
         </form>
@@ -42,5 +43,6 @@
         <?php $commentaires = $modeleCom->getCommentairesEnfants($commentaire['id']);
         include('__commentaires.php');
         ?>
+
     </div>
 <?php endforeach; ?>
