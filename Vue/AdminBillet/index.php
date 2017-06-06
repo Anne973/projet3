@@ -6,20 +6,31 @@ $this->titre = "Mon Blog - Administration"?>
     <h3><i class="fa fa-user" aria-hidden="true"></i>
         Bienvenue <?=$this->nettoyer($login)?>!</h3>
     <h2>Episode <?=$billet['titre']?></h2>
-    <div class="btn-group pull-right">
-    <a class="btn btn-primary" href="admin">Retour</a>
-    <a class="btn btn-info" id="lienDeco" href="connexion/deconnecter">Se déconnecter</a>
+    <a class="btn btn-info pull-right" id="lienDeco" href="connexion/deconnecter" style="margin-left:10px";><i class="fa fa-unlock" aria-hidden="true"></i>
+        Se déconnecter</a>
+    <a class="btn btn-info pull-right" href="admin" style="margin-left:10px"><i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Retour dashboard</a>
+    <a class="btn btn-info pull-right" href="" ><i class="fa fa-home " aria-hidden="true"></i>
+        Accueil</a>
 
-    </div>
+
 </div>
 
-<div class="col-sm-12">
+<div class="col-sm-12 ">
     <div class="row">
         <div class="col-sm-4 thumbnail" style="background-color: grey;padding :10px; ">
 
-            <div class="alert alert-danger">
-                <h4>Commentaires signalés</h4>
-                <p>Aucun commentaire signalé pour le moment</p>
+            <div class="alert alert-success">
+                <h4>Commentaires</h4>
+                <ul class="list-group">
+                    <?php foreach ($comments as $comment) { ?><li class="list-group-item">
+                        <p style="overflow-wrap: break-word"><?= $comment['contenu']; ?></p>
+                        <p>par <em><?= $comment['auteur']; ?></em> le <?= $comment['date']; ?></p>
+                        </li>
+                        <?php
+                    }
+                    ?>
+                </ul>
             </div>
 
 
@@ -36,14 +47,16 @@ $this->titre = "Mon Blog - Administration"?>
                 <textarea name="contenu" id="textarea" rows="10" class="form-control"><?= $billet['contenu']; ?></textarea>
             </div>
             <input type="hidden" name ="id" value="<?=$billet['id']?>">
-            <button type="submit" class="btn btn-success btn-lg">Update</button>
+            <button type="submit" class="btn btn-success btn-lg"><i class="fa fa-pencil" aria-hidden="true"></i>
+                Modifier</button>
 
         </form>
 
         <form action="adminBillet/delete" method="post" class="thumbnail">
             <legend>Supprimer l'épisode</legend>
             <input type="hidden" name ="id" value="<?=$billet['id']?>">
-            <button type="submit" class="btn btn-warning btn-lg">Delete</button>
+            <button type="submit" class="btn btn-warning btn-lg"><i class="fa fa-trash" aria-hidden="true"></i>
+                Supprimer</button>
         </form>
         </div>
     </div>

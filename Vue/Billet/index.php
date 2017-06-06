@@ -1,28 +1,30 @@
 <?php
 $this->titre = 'Mon blog - ' . $this->nettoyer($billet['titre']); ?>
-<article class="row">
-    <div class="col-sm-8 col-sm-offset-2">
-        <header>
+<article class="col-sm-12">
+    <div class="row">
+    <div class="col-sm-8 col-sm-offset-2 thumbnail" style="background-color: #817c4e; padding:20px;">
+        <header class="well" style="padding-top:0px">
             <h1 id="titreBillet"><?= $this->nettoyer($billet['titre']) ?></h1>
             <time><?= $this->nettoyer($billet['date']) ?></time>
         </header>
 
-        <p><?= $this->nettoyer($billet['contenu']) ?></p>
+        <p class="well" style="margin-bottom:0px"><?= $this->nettoyer($billet['contenu']) ?></p>
+    </div>
     </div>
 </article>
 
-
+<div class="col-sm-12">
 <div class="row">
-<div class="col-sm-8 col-sm-offset-2 thumbnail" style="background-color: #e8daac">
+<div class="col-sm-8 col-sm-offset-2 thumbnail" style="background-color: #817c4e">
     <header style="margin-top :0px; padding-left:10px;">
-        <h2> Réponses à <?= $billet['titre'] ?></h2>
-        <hr style="color:black">
+        <h3 style="color : white"> Réponses à <?= $billet['titre'] ?></h3>
+        <hr>
 
     </header>
 
     <ul  class="media-list" >
-        <li class="media" style="padding-left: 5px;>
-            <div class="media-body">
+        <li class="media">
+            <div class="media" style="padding-right:15px;padding-left:15px;">
                <?php include("__commentaires.php") ?>
 
                 <script>
@@ -48,9 +50,10 @@ $this->titre = 'Mon blog - ' . $this->nettoyer($billet['titre']); ?>
     </ul>
 </div>
 </div>
-
+</div>
+<div class="col-sm-12">
 <div class="row">
-    <form class="col-sm-8 col-sm-offset-2 well" method="post" action="billet/commenter">
+    <form class="col-sm-8 col-sm-offset-2 well"  method="post" action="billet/commenter">
         <legend>Commenter cet épisode</legend>
         <div class="form-group">
             <label for="auteur">Votre pseudo :</label>
@@ -65,4 +68,5 @@ $this->titre = 'Mon blog - ' . $this->nettoyer($billet['titre']); ?>
                     class="glyphicon glyphicon-ok-sign"></span> Envoyer
         </button>
     </form>
+</div>
 </div>

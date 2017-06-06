@@ -18,10 +18,10 @@ class ControleurAdminBillet extends ControleurSecurise
     {
 
         $idBillet = $this->requete->getParametre("id");
-
         $billet = $this->billet->getBillet($idBillet);
+        $comments=$this->commentaire->getCommentaires($idBillet);
         $login=$this->requete->getSession()->getAttribut("login");
-        $this->genererVue(array('billet' => $billet, 'login'=>$login));
+        $this->genererVue(array('billet' => $billet, 'comments'=> $comments, 'login'=>$login));
 
     }
 

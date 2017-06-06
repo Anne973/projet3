@@ -14,7 +14,7 @@ class Commentaire extends Modele{
 
     public function getCommentaires($idBillet)
     {
-        $sql = ('SELECT COM_ID AS id, COM_DATE AS date, COM_AUTEUR AS auteur, COM_CONTENU AS contenu, PARENT_ID FROM T_COMMENTAIRE WHERE BIL_ID=?');
+        $sql = ('SELECT COM_ID AS id, COM_DATE AS date, COM_AUTEUR AS auteur, COM_CONTENU AS contenu, PARENT_ID FROM T_COMMENTAIRE WHERE BIL_ID=? ORDER BY DATE DESC');
         $comments = $this->executerRequete($sql, array($idBillet));
         return $comments->fetchAll();
     }
@@ -70,7 +70,7 @@ class Commentaire extends Modele{
 
         $this->executerRequete($sql,array($idCommentaire));
     }
-
+    //Retourne les commentaires signalés
     public function getCommentairesSignales()
     {
 
@@ -79,6 +79,7 @@ class Commentaire extends Modele{
 
         return $commentairesSignales;
     }
+
 
     public function deleteCommentaire($idCommentaire)
     {

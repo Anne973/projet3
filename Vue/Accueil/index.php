@@ -1,7 +1,10 @@
 <?php $this->titre = 'Mon blog'; ?>
-
+<section class="col-sm-12 ">
+    <a class="btn btn-info pull-right " href="admin"><i class="fa fa-cog" aria-hidden="true"></i>
+        Accès admin</a>
+</section>
 <section class="col-sm-8" id="contenu">
-    <a href="admin">Accès admin</a>
+
     <?php
 
 
@@ -9,7 +12,7 @@
 
         ?>
 
-        <article>
+        <article >
             <header>
                 <a href="<?= "billet/index/" . $this->nettoyer($billet['id']) ?>">
                     <h1 class="titreBillet"><?= $this->nettoyer($billet['titre']) ?></h1>
@@ -55,7 +58,7 @@
         </div>
 
 
-        <div class="col-sm-10 col-sm-offset-1 panel panel-info" id="liste">
+        <div class="col-sm-8 panel panel-info " id="liste">
             <div class="panel-heading">
                 <h3 class="panel-title">Derniers épisodes parus</h3>
             </div>

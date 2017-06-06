@@ -2,16 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f60148b-f856-43a7-8e30-7041f5cb150c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Controleur/ControleurAdmin.php" afterPath="$PROJECT_DIR$/Controleur/ControleurAdmin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Controleur/ControleurBillet.php" afterPath="$PROJECT_DIR$/Controleur/ControleurBillet.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Controleur/ControleurAdminBillet.php" afterPath="$PROJECT_DIR$/Controleur/ControleurAdminBillet.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Modele/Commentaire.php" afterPath="$PROJECT_DIR$/Modele/Commentaire.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Vue/Accueil/index.php" afterPath="$PROJECT_DIR$/Vue/Accueil/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Vue/Admin/index.php" afterPath="$PROJECT_DIR$/Vue/Admin/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Vue/Billet/__commentaires.php" afterPath="$PROJECT_DIR$/Vue/Billet/__commentaires.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Vue/AdminBillet/index.php" afterPath="$PROJECT_DIR$/Vue/AdminBillet/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Vue/Billet/index.php" afterPath="$PROJECT_DIR$/Vue/Billet/index.php" />
     </list>
-    <list id="15125ab7-e34d-47b8-8675-7cdce53436d4" name="ajouté au projet 3" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list id="15125ab7-e34d-47b8-8675-7cdce53436d4" name="ajouté au projet 3" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,8 +24,8 @@
       <file leaf-file-name="ControleurAdminBillet.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Controleur/ControleurAdminBillet.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="37" column="43" lean-forward="false" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="43" />
+            <state relative-caret-position="156">
+              <caret line="23" column="75" lean-forward="false" selection-start-line="23" selection-start-column="75" selection-end-line="23" selection-end-column="75" />
               <folding>
                 <element signature="e#36#79#0#PHP" expanded="true" />
               </folding>
@@ -37,7 +36,7 @@
       <file leaf-file-name="Billet.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Modele/Billet.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="869">
+            <state relative-caret-position="1328">
               <caret line="82" column="55" lean-forward="false" selection-start-line="82" selection-start-column="8" selection-end-line="82" selection-end-column="55" />
               <folding>
                 <marker date="1496171620785" expanded="true" signature="1785:1826" ph="select COUNT... T_BILLET" />
@@ -45,16 +44,6 @@
                 <marker date="1496171620785" expanded="true" signature="2335:2412" ph="UPDATE T_BIL... " />
                 <marker date="1496171620785" expanded="true" signature="2594:2629" ph="DELETE FROM " />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ControleurBillet.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Controleur/ControleurBillet.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="952">
-              <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -74,13 +63,18 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Vue/Admin/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="44" column="10" lean-forward="false" selection-start-line="44" selection-start-column="10" selection-end-line="44" selection-end-column="10" />
+            <state relative-caret-position="390">
+              <caret line="116" column="48" lean-forward="false" selection-start-line="116" selection-start-column="48" selection-end-line="116" selection-end-column="48" />
               <folding>
-                <element signature="n#style#0;n#p#1;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#li#0;n#ul#0;n#div#2;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#form#0;n#li#0;n#ul#0;n#div#2;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#form#1;n#li#0;n#ul#0;n#div#2;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#a#0;n#h3#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#a#0;n#h3#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#li#0;n#ul#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#a#0;n#h3#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#li#0;n#ul#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#form#0;n#li#0;n#ul#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#form#1;n#li#0;n#ul#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -89,10 +83,17 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Vue/AdminBillet/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-51">
-              <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+            <state relative-caret-position="323">
+              <caret line="49" column="112" lean-forward="true" selection-start-line="49" selection-start-column="112" selection-end-line="49" selection-end-column="112" />
               <folding>
-                <marker date="1496238998063" expanded="true" signature="1081:1127" ph="..." />
+                <element signature="n#style#0;n#a#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <marker date="1496712271423" expanded="true" signature="1564:1670" ph="..." />
+                <marker date="1496712271423" expanded="true" signature="1639:1670" ph="..." />
+                <marker date="1496712271423" expanded="true" signature="1724:1770" ph="..." />
+                <marker date="1496712271423" expanded="true" signature="1973:2126" ph="..." />
+                <marker date="1496712271423" expanded="true" signature="2482:2514" ph="..." />
               </folding>
             </state>
           </provider>
@@ -101,8 +102,8 @@
       <file leaf-file-name="__commentaires.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Vue/Billet/__commentaires.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="79" lean-forward="false" selection-start-line="3" selection-start-column="53" selection-end-line="3" selection-end-column="79" />
+            <state relative-caret-position="289">
+              <caret line="17" column="42" lean-forward="true" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#0;n#div#0;n#!!top" expanded="true" />
@@ -124,10 +125,16 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Vue/Billet/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-323">
-              <caret line="23" column="25" lean-forward="false" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+            <state relative-caret-position="323">
+              <caret line="19" column="32" lean-forward="false" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
               <folding>
-                <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#article#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#header#0;n#div#0;n#div#0;n#article#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#article#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#header#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h3#0;n#header#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -136,31 +143,43 @@
       <file leaf-file-name="Commentaire.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Modele/Commentaire.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="8" column="138" lean-forward="false" selection-start-line="8" selection-start-column="138" selection-end-line="8" selection-end-column="138" />
+            <state relative-caret-position="173">
+              <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
               <folding>
-                <marker date="1496685142567" expanded="true" signature="204:325" ph="SELECT COM_I... T_COMMENTAIRE" />
-                <marker date="1496685142567" expanded="true" signature="566:694" ph="SELECT COM_I... T_COMMENTAIRE" />
-                <marker date="1496685142567" expanded="true" signature="885:1016" ph="SELECT COM_I... T_COMMENTAIRE" />
-                <marker date="1496685142567" expanded="true" signature="885:1019" ph="SELECT COM_I... T_COMMENTAIRE" />
-                <marker date="1496685142567" expanded="true" signature="1214:1342" ph="SELECT COM_I... T_COMMENTAIRE" />
-                <marker date="1496685142567" expanded="true" signature="1214:1347" ph="SELECT COM_I... T_COMMENTAIRE" />
-                <marker date="1496685142567" expanded="true" signature="1214:1364" ph="SELECT COM_I... T_COMMENTAIRE" />
-                <marker date="1496685142567" expanded="true" signature="1214:1366" ph="SELECT COM_I... T_COMMENTAIRE" />
-                <marker date="1496685142567" expanded="true" signature="1544:1698" ph="SELECT COM_I... T_COMMENTAIRE" />
-                <marker date="1496685142567" expanded="true" signature="1964:2085" ph="INSERT INTO T_COMMENTAIRE... " />
-                <marker date="1496685142567" expanded="true" signature="2299:2351" ph="SELECT COUNT... T_COMMENTAIRE" />
-                <marker date="1496685142567" expanded="true" signature="2607:2663" ph="SELECT COUNT... T_COMMENT" />
-                <marker date="1496685142567" expanded="true" signature="2607:2684" ph="SELECT COUNT... T_COMMENTAIRE" />
-                <marker date="1496685142567" expanded="true" signature="2931:2982" ph="UPDATE T_COM... " />
-                <marker date="1496685142567" expanded="true" signature="2937:2964" ph="INSERT INTO T_COMMENTAIRE... " />
-                <marker date="1496685142567" expanded="true" signature="2937:2982" ph="INSERT INTO T_COMMENTAIRE... " />
-                <marker date="1496685142567" expanded="true" signature="3123:3242" ph="SELECT COM_I... T_COMMENTAIRES" />
-                <marker date="1496685142567" expanded="true" signature="3123:3263" ph="SELECT COM_I... T_COMMENTAIRE" />
-                <marker date="1496685142567" expanded="true" signature="3123:3327" ph="SELECT COM_I... T" />
-                <marker date="1496685142567" expanded="true" signature="3450:3490" ph="DELETE FROM " />
-                <marker date="1496685142567" expanded="true" signature="3639:3689" ph="UPDATE T_COM... " />
+                <marker date="1496696313360" expanded="true" signature="204:325" ph="SELECT COM_I... T_COMMENTAIRE" />
+                <marker date="1496696313360" expanded="true" signature="566:694" ph="SELECT COM_I... T_COMMENTAIRE" />
+                <marker date="1496696313360" expanded="true" signature="566:713" ph="SELECT COM_I... T_COMMENTAIRE" />
+                <marker date="1496696313360" expanded="true" signature="904:1035" ph="SELECT COM_I... T_COMMENTAIRE" />
+                <marker date="1496696313360" expanded="true" signature="904:1038" ph="SELECT COM_I... T_COMMENTAIRE" />
+                <marker date="1496696313360" expanded="true" signature="1233:1361" ph="SELECT COM_I... T_COMMENTAIRE" />
+                <marker date="1496696313360" expanded="true" signature="1233:1366" ph="SELECT COM_I... T_COMMENTAIRE" />
+                <marker date="1496696313360" expanded="true" signature="1233:1383" ph="SELECT COM_I... T_COMMENTAIRE" />
+                <marker date="1496696313360" expanded="true" signature="1233:1385" ph="SELECT COM_I... T_COMMENTAIRE" />
+                <marker date="1496696313360" expanded="true" signature="1563:1717" ph="SELECT COM_I... T_COMMENTAIRE" />
+                <marker date="1496696313360" expanded="true" signature="1983:2104" ph="INSERT INTO T_COMMENTAIRE... " />
+                <marker date="1496696313360" expanded="true" signature="2318:2370" ph="SELECT COUNT... T_COMMENTAIRE" />
+                <marker date="1496696313360" expanded="true" signature="2626:2682" ph="SELECT COUNT... T_COMMENT" />
+                <marker date="1496696313360" expanded="true" signature="2626:2703" ph="SELECT COUNT... T_COMMENTAIRE" />
+                <marker date="1496696313360" expanded="true" signature="2950:3001" ph="UPDATE T_COM... " />
+                <marker date="1496696313360" expanded="true" signature="2956:2983" ph="INSERT INTO T_COMMENTAIRE... " />
+                <marker date="1496696313360" expanded="true" signature="2956:3001" ph="INSERT INTO T_COMMENTAIRE... " />
+                <marker date="1496696313360" expanded="true" signature="3182:3301" ph="SELECT COM_I... T_COMMENTAIRES" />
+                <marker date="1496696313360" expanded="true" signature="3182:3322" ph="SELECT COM_I... T_COMMENTAIRE" />
+                <marker date="1496696313360" expanded="true" signature="3182:3386" ph="SELECT COM_I... T" />
+                <marker date="1496696313360" expanded="true" signature="3433:3509" ph="SELECT COM_D... T_COMMENTAIRE" />
+                <marker date="1496696313360" expanded="true" signature="3510:3550" ph="DELETE FROM " />
+                <marker date="1496696313360" expanded="true" signature="3699:3749" ph="UPDATE T_COM... " />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Vue/Accueil/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="60" column="28" lean-forward="false" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="28" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -196,15 +215,15 @@
         <option value="$PROJECT_DIR$/Modele/Billet.php" />
         <option value="$PROJECT_DIR$/Vue/AdminBillet/messageDelete.php" />
         <option value="$PROJECT_DIR$/Vue/gabarit.php" />
-        <option value="$PROJECT_DIR$/Vue/Accueil/index.php" />
-        <option value="$PROJECT_DIR$/Controleur/ControleurAdminBillet.php" />
-        <option value="$PROJECT_DIR$/Vue/AdminBillet/index.php" />
         <option value="$PROJECT_DIR$/Controleur/ControleurBillet.php" />
-        <option value="$PROJECT_DIR$/Vue/Billet/index.php" />
-        <option value="$PROJECT_DIR$/Vue/Billet/__commentaires.php" />
         <option value="$PROJECT_DIR$/Controleur/ControleurAdmin.php" />
-        <option value="$PROJECT_DIR$/Vue/Admin/index.php" />
+        <option value="$PROJECT_DIR$/Controleur/ControleurAdminBillet.php" />
         <option value="$PROJECT_DIR$/Modele/Commentaire.php" />
+        <option value="$PROJECT_DIR$/Vue/Billet/__commentaires.php" />
+        <option value="$PROJECT_DIR$/Vue/Billet/index.php" />
+        <option value="$PROJECT_DIR$/Vue/Accueil/index.php" />
+        <option value="$PROJECT_DIR$/Vue/AdminBillet/index.php" />
+        <option value="$PROJECT_DIR$/Vue/Admin/index.php" />
       </list>
     </option>
   </component>
@@ -216,10 +235,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="170" />
-    <option name="y" value="61" />
-    <option name="width" value="1129" />
-    <option name="height" value="649" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -589,12 +608,12 @@
       <workItem from="1496328488827" duration="6031000" />
       <workItem from="1496488481243" duration="19154000" />
       <workItem from="1496581807363" duration="9981000" />
-      <workItem from="1496674918681" duration="10973000" />
+      <workItem from="1496674918681" duration="32615000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="338000000" />
+    <option name="totallyTimeSpent" value="359642000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -606,16 +625,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="170" y="61" width="1129" height="649" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20860617" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16868381" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280943" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.065891474" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4031008" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -923,14 +943,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Vue/Accueil/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="7" column="34" lean-forward="true" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Framework/Controleur.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -963,16 +975,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Controleur/ControleurAdminBillet.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="37" column="43" lean-forward="false" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="43" />
-          <folding>
-            <element signature="e#36#79#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Controleur/ControleurBillet.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="952">
@@ -981,42 +983,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Vue/Billet/__commentaires.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="79" lean-forward="false" selection-start-line="3" selection-start-column="53" selection-end-line="3" selection-end-column="79" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Vue/Billet/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-323">
-          <caret line="23" column="25" lean-forward="false" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
-          <folding>
-            <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Controleur/ControleurAccueil.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="25" column="51" lean-forward="false" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Vue/AdminBillet/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
-          <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-          <folding>
-            <marker date="1496238998063" expanded="true" signature="1081:1127" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1032,7 +1003,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Modele/Billet.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="869">
+        <state relative-caret-position="1328">
           <caret line="82" column="55" lean-forward="false" selection-start-line="82" selection-start-column="8" selection-end-line="82" selection-end-column="55" />
           <folding>
             <marker date="1496171620785" expanded="true" signature="1785:1826" ph="select COUNT... T_BILLET" />
@@ -1043,45 +1014,114 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Controleur/ControleurAdminBillet.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="23" column="75" lean-forward="false" selection-start-line="23" selection-start-column="75" selection-end-line="23" selection-end-column="75" />
+          <folding>
+            <element signature="e#36#79#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Modele/Commentaire.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" column="138" lean-forward="false" selection-start-line="8" selection-start-column="138" selection-end-line="8" selection-end-column="138" />
+        <state relative-caret-position="173">
+          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
           <folding>
-            <marker date="1496685142567" expanded="true" signature="204:325" ph="SELECT COM_I... T_COMMENTAIRE" />
-            <marker date="1496685142567" expanded="true" signature="566:694" ph="SELECT COM_I... T_COMMENTAIRE" />
-            <marker date="1496685142567" expanded="true" signature="885:1016" ph="SELECT COM_I... T_COMMENTAIRE" />
-            <marker date="1496685142567" expanded="true" signature="885:1019" ph="SELECT COM_I... T_COMMENTAIRE" />
-            <marker date="1496685142567" expanded="true" signature="1214:1342" ph="SELECT COM_I... T_COMMENTAIRE" />
-            <marker date="1496685142567" expanded="true" signature="1214:1347" ph="SELECT COM_I... T_COMMENTAIRE" />
-            <marker date="1496685142567" expanded="true" signature="1214:1364" ph="SELECT COM_I... T_COMMENTAIRE" />
-            <marker date="1496685142567" expanded="true" signature="1214:1366" ph="SELECT COM_I... T_COMMENTAIRE" />
-            <marker date="1496685142567" expanded="true" signature="1544:1698" ph="SELECT COM_I... T_COMMENTAIRE" />
-            <marker date="1496685142567" expanded="true" signature="1964:2085" ph="INSERT INTO T_COMMENTAIRE... " />
-            <marker date="1496685142567" expanded="true" signature="2299:2351" ph="SELECT COUNT... T_COMMENTAIRE" />
-            <marker date="1496685142567" expanded="true" signature="2607:2663" ph="SELECT COUNT... T_COMMENT" />
-            <marker date="1496685142567" expanded="true" signature="2607:2684" ph="SELECT COUNT... T_COMMENTAIRE" />
-            <marker date="1496685142567" expanded="true" signature="2931:2982" ph="UPDATE T_COM... " />
-            <marker date="1496685142567" expanded="true" signature="2937:2964" ph="INSERT INTO T_COMMENTAIRE... " />
-            <marker date="1496685142567" expanded="true" signature="2937:2982" ph="INSERT INTO T_COMMENTAIRE... " />
-            <marker date="1496685142567" expanded="true" signature="3123:3242" ph="SELECT COM_I... T_COMMENTAIRES" />
-            <marker date="1496685142567" expanded="true" signature="3123:3263" ph="SELECT COM_I... T_COMMENTAIRE" />
-            <marker date="1496685142567" expanded="true" signature="3123:3327" ph="SELECT COM_I... T" />
-            <marker date="1496685142567" expanded="true" signature="3450:3490" ph="DELETE FROM " />
-            <marker date="1496685142567" expanded="true" signature="3639:3689" ph="UPDATE T_COM... " />
+            <marker date="1496696313360" expanded="true" signature="204:325" ph="SELECT COM_I... T_COMMENTAIRE" />
+            <marker date="1496696313360" expanded="true" signature="566:694" ph="SELECT COM_I... T_COMMENTAIRE" />
+            <marker date="1496696313360" expanded="true" signature="566:713" ph="SELECT COM_I... T_COMMENTAIRE" />
+            <marker date="1496696313360" expanded="true" signature="904:1035" ph="SELECT COM_I... T_COMMENTAIRE" />
+            <marker date="1496696313360" expanded="true" signature="904:1038" ph="SELECT COM_I... T_COMMENTAIRE" />
+            <marker date="1496696313360" expanded="true" signature="1233:1361" ph="SELECT COM_I... T_COMMENTAIRE" />
+            <marker date="1496696313360" expanded="true" signature="1233:1366" ph="SELECT COM_I... T_COMMENTAIRE" />
+            <marker date="1496696313360" expanded="true" signature="1233:1383" ph="SELECT COM_I... T_COMMENTAIRE" />
+            <marker date="1496696313360" expanded="true" signature="1233:1385" ph="SELECT COM_I... T_COMMENTAIRE" />
+            <marker date="1496696313360" expanded="true" signature="1563:1717" ph="SELECT COM_I... T_COMMENTAIRE" />
+            <marker date="1496696313360" expanded="true" signature="1983:2104" ph="INSERT INTO T_COMMENTAIRE... " />
+            <marker date="1496696313360" expanded="true" signature="2318:2370" ph="SELECT COUNT... T_COMMENTAIRE" />
+            <marker date="1496696313360" expanded="true" signature="2626:2682" ph="SELECT COUNT... T_COMMENT" />
+            <marker date="1496696313360" expanded="true" signature="2626:2703" ph="SELECT COUNT... T_COMMENTAIRE" />
+            <marker date="1496696313360" expanded="true" signature="2950:3001" ph="UPDATE T_COM... " />
+            <marker date="1496696313360" expanded="true" signature="2956:2983" ph="INSERT INTO T_COMMENTAIRE... " />
+            <marker date="1496696313360" expanded="true" signature="2956:3001" ph="INSERT INTO T_COMMENTAIRE... " />
+            <marker date="1496696313360" expanded="true" signature="3182:3301" ph="SELECT COM_I... T_COMMENTAIRES" />
+            <marker date="1496696313360" expanded="true" signature="3182:3322" ph="SELECT COM_I... T_COMMENTAIRE" />
+            <marker date="1496696313360" expanded="true" signature="3182:3386" ph="SELECT COM_I... T" />
+            <marker date="1496696313360" expanded="true" signature="3433:3509" ph="SELECT COM_D... T_COMMENTAIRE" />
+            <marker date="1496696313360" expanded="true" signature="3510:3550" ph="DELETE FROM " />
+            <marker date="1496696313360" expanded="true" signature="3699:3749" ph="UPDATE T_COM... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue/Billet/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="32" lean-forward="false" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#article#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#header#0;n#div#0;n#div#0;n#article#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#article#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#header#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#header#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue/Billet/__commentaires.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="42" lean-forward="true" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue/Accueil/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="60" column="28" lean-forward="false" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue/AdminBillet/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="49" column="112" lean-forward="true" selection-start-line="49" selection-start-column="112" selection-end-line="49" selection-end-column="112" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <marker date="1496712271423" expanded="true" signature="1564:1670" ph="..." />
+            <marker date="1496712271423" expanded="true" signature="1639:1670" ph="..." />
+            <marker date="1496712271423" expanded="true" signature="1724:1770" ph="..." />
+            <marker date="1496712271423" expanded="true" signature="1973:2126" ph="..." />
+            <marker date="1496712271423" expanded="true" signature="2482:2514" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Vue/Admin/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="44" column="10" lean-forward="false" selection-start-line="44" selection-start-column="10" selection-end-line="44" selection-end-column="10" />
+        <state relative-caret-position="390">
+          <caret line="116" column="48" lean-forward="false" selection-start-line="116" selection-start-column="48" selection-end-line="116" selection-end-column="48" />
           <folding>
-            <element signature="n#style#0;n#p#1;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#li#0;n#ul#0;n#div#2;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#form#0;n#li#0;n#ul#0;n#div#2;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#form#1;n#li#0;n#ul#0;n#div#2;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#a#0;n#h3#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#a#0;n#h3#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#li#0;n#ul#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#a#0;n#h3#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#li#0;n#ul#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#0;n#li#0;n#ul#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#1;n#li#0;n#ul#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
