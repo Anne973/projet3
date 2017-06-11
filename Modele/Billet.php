@@ -82,6 +82,28 @@ class Billet extends Modele
         $sql ='DELETE FROM T_BILLET WHERE BIL_ID=?';
         $this->executerRequete($sql, array($idBillet));
     }
+    //Recherche par mot clé
+    public function searchBillet($q){
+
+        $s=explode(" ", $q);
+        $sql='SELECT BIL_TITRE as titre, BIL_CONTENU AS contenu FROM T_BILLET';
+        $i=0;
+        foreach ($s as $mot){
+            if (strlen($mot)>3){
+            if($i==0){
+                $sql.=' WHERE ';
+            }
+            else{
+                $sql.=' OR ';
+            }
+            $sql.='BIL_CONTENU LIKE \'%mot%\'';
+            $i++;
+            }
+        }
+        $resultat=$this->executerRequete($sql, array($q));
+
+        return $resultat->fetchAll();
+    }
 }
 
 

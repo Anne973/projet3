@@ -1,8 +1,5 @@
 <?php $this->titre = 'Mon blog'; ?>
-<section class="col-sm-12 ">
-    <a class="btn btn-info pull-right " href="admin"><i class="fa fa-cog" aria-hidden="true"></i>
-        Accès admin</a>
-</section>
+
 <section class="col-sm-8" id="contenu">
 
     <?php

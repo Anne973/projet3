@@ -18,14 +18,25 @@
 
 </head>
 <body>
+<nav class="col-sm-12 navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.php">Billet simple pour l'Alaska</a>
+        </div>
+        <p class="navbar-text"><em>Roman en ligne</em></p>
+
+        <form class="navbar-form navbar-right inline-form" action ="recherche/index" method="post">
+            <div class="form-group">
+                <input type="search" class="input-sm form-control" id="cle" name="cle"  placeholder="Recherche">
+                <button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-eye-open"></span> Chercher</button>
+            </div>
+        </form>
+    </div>
+</nav>
+
 
 <div class="container">
-    <header class="row">
 
-        <a href="index.php"><h1 class="text-center" id="titreBlog">Billet simple pour l'Alaska</h1></a>
-        <h3 class="text-center" id="soustitre">Roman en ligne</h3>
-
-    </header>
 
     <div class="row">
         <?= $contenu ?>

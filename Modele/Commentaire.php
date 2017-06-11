@@ -14,26 +14,26 @@ class Commentaire extends Modele{
 
     public function getCommentaires($idBillet)
     {
-        $sql = ('SELECT COM_ID AS id, COM_DATE AS date, COM_AUTEUR AS auteur, COM_CONTENU AS contenu, PARENT_ID FROM T_COMMENTAIRE WHERE BIL_ID=? ORDER BY DATE DESC');
+        $sql = ('SELECT COM_ID AS id, COM_DATE AS date, COM_AUTEUR AS auteur, COM_CONTENU AS contenu, COM_DEPTH AS depth, PARENT_ID FROM T_COMMENTAIRE WHERE BIL_ID=? ORDER BY DATE DESC');
         $comments = $this->executerRequete($sql, array($idBillet));
         return $comments->fetchAll();
     }
    public function getCommentairesEnfants($idCommentaire){
-       $sql = ('SELECT COM_ID AS id, COM_DATE AS date, COM_AUTEUR AS auteur, COM_CONTENU AS contenu, PARENT_ID FROM T_COMMENTAIRE WHERE PARENT_ID=?') ;
+       $sql = ('SELECT COM_ID AS id, COM_DATE AS date, COM_AUTEUR AS auteur, COM_CONTENU AS contenu, COM_DEPTH AS depth, PARENT_ID FROM T_COMMENTAIRE WHERE PARENT_ID=?') ;
        $comments = $this->executerRequete($sql, array($idCommentaire));
        return $comments->fetchAll();
     }
 
     public function getCommentairesParents($idBillet)
     {
-        $sql = ('SELECT COM_ID AS id, COM_DATE AS date, COM_AUTEUR AS auteur, COM_CONTENU AS contenu, PARENT_ID FROM T_COMMENTAIRE WHERE BIL_ID=? AND PARENT_ID IS NULL');
+        $sql = ('SELECT COM_ID AS id, COM_DATE AS date, COM_AUTEUR AS auteur, COM_CONTENU AS contenu, COM_DEPTH AS depth, PARENT_ID FROM T_COMMENTAIRE WHERE BIL_ID=? AND PARENT_ID IS NULL');
         $comments = $this->executerRequete($sql, array($idBillet));
         return $comments->fetchAll();
     }
 
     public function getCommentaire($id)
     {
-        $sql = ('SELECT COM_ID AS id, BIL_ID AS bilid, COM_DATE AS date, COM_AUTEUR AS auteur, COM_CONTENU AS contenu, COM_DEPTH AS depth FROM T_COMMENTAIRE WHERE COM_ID=?');
+        $sql = ('SELECT BIL_ID AS bilid, COM_DATE AS date, COM_AUTEUR AS auteur, COM_CONTENU AS contenu, COM_DEPTH AS depth FROM T_COMMENTAIRE WHERE COM_ID=?');
         $comment = $this->executerRequete($sql, array($id));
         return $comment->fetch();
     }

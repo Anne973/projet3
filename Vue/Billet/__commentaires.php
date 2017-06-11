@@ -1,18 +1,19 @@
 <?php foreach ($commentaires as $commentaire): ?>
-    <div class="thumbnail" style="background-color: #b3ad99;">
+    <div class="thumbnail" >
         <h4 class="media-heading" style="margin-top:10px; margin-left :10px;"><?= $commentaire['auteur'] ?></h4>
         <p style="margin-top:10px; margin-left:10px; overflow-wrap: break-word"><?= $commentaire['contenu'] ?></p>
     </div>
 
     <div>
-        <button data-toggle="modal" data-backdrop="false" href="#formulaire" class="btn btn-success btn-xs">Répondre
-        </button>
+        <?php if ($commentaire['depth']<=2) {?>
+        <button data-toggle="modal" data-backdrop="false" href="#formulaire_<?=$commentaire['id']?>" class="btn btn-success btn-xs">Répondre
+        </button><?php } ?>
         <form action="billet/signaler" method="post" style="display:inline;">
             <input type="hidden" name="id" value="<?= $commentaire['id'] ?>">
             <button type="submit" class="btn btn-warning btn-xs">Signaler</button>
         </form>
     </div>
-    <div class="modal fade" id="formulaire">
+    <div class="modal fade" id="formulaire_<?=$commentaire['id']?>">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">

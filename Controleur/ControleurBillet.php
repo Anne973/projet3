@@ -48,15 +48,20 @@ class ControleurBillet extends Controleur {
     public function repondre()
         {
             $idCommentaire = $this->requete->getParametre("id");
-            $comment = $this->commentaire->getCommentaire($idCommentaire);
+            $com = $this->commentaire->getCommentaire($idCommentaire);
 
             $auteur = $this->requete->getParametre("auteur");
             $contenu = $this->requete->getParametre("contenu");
-            $idBillet = $comment['bilid'];
-            $depth = $comment['depth'] + 1;
+            $idBillet = $com['bilid'];
+            $depth = $com['depth'] + 1;
             $parentid = $idCommentaire;
+            if ($depth<=3){
             $this->commentaire->ajouterCommentaire($auteur, $contenu, $idBillet, $depth, $parentid);
-
+            $this->rediriger("billet", "index/" . $com['bilid']);
+            }
+            else{
+                throw new \Exception("il ne peut y avoir plus de trois sous-niveaux de commentaires");
+            }
         }
     }
 

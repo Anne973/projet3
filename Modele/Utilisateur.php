@@ -9,16 +9,23 @@ class Utilisateur extends Modele
     //vérifie qu'un utilisateur existe dans la BD
     public function connecter($login, $mdp)
     {
-        $sql = "select UTIL_ID from T_UTILISATEUR where UTIL_LOGIN=? and UTIL_MDP=?";
-        $utilisateur =$this->executerRequete($sql,array($login,$mdp));
-        return($utilisateur->rowCount()==1);
+        $sql = "select UTIL_ID, UTIL_MDP from T_UTILISATEUR where UTIL_LOGIN=? ";
+
+        $utilisateur =$this->executerRequete($sql,array($login))->fetch();
+        if ($utilisateur){
+            return password_verify($mdp, $utilisateur['UTIL_MDP']);
+        }
+        else{
+            return false;
+        }
+
     }
 
     //renvoie un utilisateur existant dans la BD
-    public function getUtilisateur($login, $mdp)
+    public function getUtilisateur($login)
     {
-        $sql="select UTIL_ID as idUtilisateur, UTIL_LOGIN as login, UTIL_MDP as mdp from T_UTILISATEUR where UTIL_LOGIN=? and UTIL_MDP=?";
-        $utilisateur=$this->executerRequete($sql, array($login,$mdp));
+        $sql="select UTIL_ID as idUtilisateur, UTIL_LOGIN as login from T_UTILISATEUR where UTIL_LOGIN=? ";
+        $utilisateur=$this->executerRequete($sql, array($login));
         if ($utilisateur->rowCount()==1){
             return $utilisateur->fetch();
         }

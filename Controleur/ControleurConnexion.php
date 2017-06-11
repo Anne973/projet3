@@ -24,7 +24,7 @@ class ControleurConnexion extends Controleur
             $login = $this->requete->getParametre("login");
             $mdp = $this->requete->getParametre("mdp");
             if ($this->utilisateur->connecter($login, $mdp)) {
-                $utilisateur = $this->utilisateur->getUtilisateur($login, $mdp);
+                $utilisateur = $this->utilisateur->getUtilisateur($login);
                 $this->requete->getSession()->setAttribut("idUtilisateur", $utilisateur['idUtilisateur']);
                 $this->requete->getSession()->setAttribut("login", $utilisateur['login']);
                 $this->rediriger("admin");

@@ -2,13 +2,13 @@
 $this->titre = 'Mon blog - ' . $this->nettoyer($billet['titre']); ?>
 <article class="col-sm-12">
     <div class="row">
-    <div class="col-sm-8 col-sm-offset-2 thumbnail" style="background-color: #817c4e; padding:20px;">
-        <header class="well" style="padding-top:0px">
+    <div class="col-sm-8 col-sm-offset-2 thumbnail" style="background-color: #b3a679; padding:20px; margin-top:20px;">
+        <header style="padding-top:0px">
             <h1 id="titreBillet"><?= $this->nettoyer($billet['titre']) ?></h1>
             <time><?= $this->nettoyer($billet['date']) ?></time>
+            <hr>
         </header>
-
-        <p class="well" style="margin-bottom:0px"><?= $this->nettoyer($billet['contenu']) ?></p>
+        <p style="margin-bottom:0px"><?=$billet['contenu']?></p>
     </div>
     </div>
 </article>
@@ -27,21 +27,22 @@ $this->titre = 'Mon blog - ' . $this->nettoyer($billet['titre']); ?>
             <div class="media" style="padding-right:15px;padding-left:15px;">
                <?php include("__commentaires.php") ?>
 
-                <script>
+                <script>/*
                     $(function () {
                         $("form.form-reply").submit(function (e) {
                             e.preventDefault();
                             var $form = $(this);
+                            console.log($form);
                             $.post($form.attr("action"), $form.serialize())
                                 .done(function (data) {
                                     $("#html").html(data);
-                                    $("#formulaire").modal("hide");
+                                    $("#formulaire_"+$form.find('input[name="id"]').val()).modal("hide");
                                 })
                                 .fail(function () {
                                     alert("erreur");
                                 });
                         });
-                    });
+                    });*/
                 </script>
 
 
