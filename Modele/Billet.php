@@ -30,14 +30,15 @@ class Billet extends Modele
         return $liste;
 
     }
-   public function getBillets($page)
+
+    public function getBillets($page)
     {
 
         $sql = 'select BIL_ID as id, BIL_DATE as date,'
             . ' BIL_TITRE as titre, BIL_CONTENU as contenu from T_BILLET'
-            . ' order by BIL_ID desc limit '.(($page-1)*5).', 5';
+            . ' order by BIL_ID desc limit ' . (($page - 1) * 5) . ', 5';
 
-       $billets=$this->executerRequete($sql);
+        $billets = $this->executerRequete($sql);
         return $billets->fetchAll();
     }
 
@@ -63,46 +64,55 @@ class Billet extends Modele
         return $ligne['nbBillets'];
 
     }
+
     //Ajoute des billets dans la base
-    public function ajouterBillet($titre,$contenu)
+    public function ajouterBillet($titre, $contenu)
     {
         $sql = 'INSERT INTO T_BILLET (BIL_DATE, BIL_TITRE, BIL_CONTENU) VALUES (NOW(), ?, ?)';
 
-        $this->executerRequete($sql, array($titre,$contenu));
+        $this->executerRequete($sql, array($titre, $contenu));
     }
 
     //Modifie des billets dans la base
-    public function updateBillet ($titre,$contenu,$idBillet){
-       $sql = 'UPDATE T_BILLET SET BIL_DATE=NOW(), BIL_TITRE=?, BIL_CONTENU=? WHERE BIL_ID=?';
-       $this->executerRequete($sql, array($titre,$contenu,$idBillet));
+    public function updateBillet($titre, $contenu, $idBillet)
+    {
+        $sql = 'UPDATE T_BILLET SET BIL_DATE=NOW(), BIL_TITRE=?, BIL_CONTENU=? WHERE BIL_ID=?';
+        $this->executerRequete($sql, array($titre, $contenu, $idBillet));
     }
 
     //Supprime les billets dans la base
-    public function deleteBillet ($idBillet){
-        $sql ='DELETE FROM T_BILLET WHERE BIL_ID=?';
+    public function deleteBillet($idBillet)
+    {
+        $sql = 'DELETE FROM T_BILLET WHERE BIL_ID=?';
         $this->executerRequete($sql, array($idBillet));
     }
+
     //Recherche par mot clé
-    public function searchBillet($q){
+    public function searchBillet($q)
+    {
+        if (strlen($q) > 3) {
+            $s = explode(" ", $q);
+            $sql = "SELECT * FROM T_BILLET";
+            $i = 0;
+            foreach ($s as $mot) {
+                if (strlen($mot) > 3) {
+                    if ($i == 0) {
+                        $sql .= " WHERE ";
+                    } else {
+                        $sql .= " AND ";
+                    }
+                    $sql .= "BIL_CONTENU LIKE '%$mot%'";
+                    $i++;
+                }
+            }
+            $resultat = $this->executerRequete($sql, array($q));
+            return $resultat->fetchAll();
 
-        $s=explode(" ", $q);
-        $sql='SELECT BIL_TITRE as titre, BIL_CONTENU AS contenu FROM T_BILLET';
-        $i=0;
-        foreach ($s as $mot){
-            if (strlen($mot)>3){
-            if($i==0){
-                $sql.=' WHERE ';
-            }
-            else{
-                $sql.=' OR ';
-            }
-            $sql.='BIL_CONTENU LIKE \'%mot%\'';
-            $i++;
-            }
+
+        } else {
+            throw new \Exception("Veuillez entrer un nombre de caractères suffisant");
         }
-        $resultat=$this->executerRequete($sql, array($q));
 
-        return $resultat->fetchAll();
     }
 }
 

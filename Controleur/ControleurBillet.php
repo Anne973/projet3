@@ -20,9 +20,9 @@ class ControleurBillet extends Controleur {
 
         $billet = $this->billet->getBillet($idBillet);
         $commentaires = $this->commentaire->getCommentairesParents($idBillet);
-
+        $nbCommentaires=$this->commentaire->getNbCommentaires($idBillet);
         $this->genererVue(array('billet' => $billet,
-            'commentaires' => $commentaires, 'modeleCom'=>$this->commentaire));
+            'commentaires' => $commentaires, 'modeleCom'=>$this->commentaire, 'nbCommentaires'=> $nbCommentaires));
     }
 
     // Ajoute un commentaire sur un billet
@@ -32,9 +32,11 @@ class ControleurBillet extends Controleur {
         $contenu = $this->requete->getParametre("contenu");
 
         $this->commentaire->ajouterCommentaire($auteur, $contenu, $idBillet);
-
+        $this->setFlash("votre commentaire a été ajouté","success");
         // Exécution de l'action par défaut pour actualiser la liste des billets
-        $this->executerAction("index");
+        $this->rediriger("billet", "index/" . $idBillet);
+
+
     }
 
     public function signaler()
@@ -42,6 +44,7 @@ class ControleurBillet extends Controleur {
         $idCommentaire = $this->requete->getParametre("id");
         $com = $this->commentaire->getCommentaire($idCommentaire);
         $this->commentaire->signalerCommentaire($idCommentaire);
+        $this->setFlash("ce commentaire a été signalé au modérateur","success");
         $this->rediriger("billet", "index/" . $com['bilid']);
     }
 
@@ -55,8 +58,10 @@ class ControleurBillet extends Controleur {
             $idBillet = $com['bilid'];
             $depth = $com['depth'] + 1;
             $parentid = $idCommentaire;
+
             if ($depth<=3){
             $this->commentaire->ajouterCommentaire($auteur, $contenu, $idBillet, $depth, $parentid);
+            $this->setFlash("votre réponse a été prise en compte","success");
             $this->rediriger("billet", "index/" . $com['bilid']);
             }
             else{

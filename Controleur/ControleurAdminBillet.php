@@ -19,9 +19,10 @@ class ControleurAdminBillet extends ControleurSecurise
 
         $idBillet = $this->requete->getParametre("id");
         $billet = $this->billet->getBillet($idBillet);
+        $nbCommentaires =$this->commentaire->getNbCommentaires($idBillet);
         $comments=$this->commentaire->getCommentaires($idBillet);
         $login=$this->requete->getSession()->getAttribut("login");
-        $this->genererVue(array('billet' => $billet, 'comments'=> $comments, 'login'=>$login));
+        $this->genererVue(array('billet' => $billet, 'comments'=> $comments,'nbCommentaires' =>$nbCommentaires, 'login'=>$login));
 
     }
 
@@ -33,7 +34,7 @@ class ControleurAdminBillet extends ControleurSecurise
             $contenu = $this->requete->getParametre("contenu");
 
             $this->billet->updateBillet($titre, $contenu, $idBillet);
-
+            $this->setFlash("L'épisode a été modifié","success");
             // Exécution de l'action par défaut pour réactualiser la page
             $this->executerAction("index");
         }
@@ -43,6 +44,7 @@ class ControleurAdminBillet extends ControleurSecurise
         {
             $idBillet = $this->requete->getParametre("id");
             $this->billet->deleteBillet($idBillet);
+            $this->setFlash("L'épisode a été supprimé","success");
             $this->rediriger(admin);
 
 

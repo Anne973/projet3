@@ -1,12 +1,18 @@
 <?php
-?><h2> Résultats trouvés</h2><?php
-
+if ($nbResultat==NULL){ ?> <div style="padding:20px;"><h2 class="thumbnail"><?=$q;?></h2>
+    <p>Aucun résultat n'a été trouvé pour votre recherche</p></div><?php
+}
+else if ($nbResultat==1){?> <div style="padding:20px;"><h2 class="thumbnail"><?=$q;?></h2>
+    <p><?=$nbResultat?> résultat pour votre recherche</p></div><?php
+}
+else{?> <div style="padding:20px;"><h2 class="thumbnail"><?=$q;?></h2>
+<p><?=$nbResultat?> résultats pour votre recherche </p></div><?php
+}
 
 foreach ($resultat as $elementResultat){
-    ?><h4><?=$elementResultat['titre'];?></h4>
-    <a class="btn btn-primary btn-sm" href=""><span
-                class="glyphicon glyphicon-book"></span> Afficher l'épisode</a>
+    ?><div style ="padding-left:20px; padding-right:20px;"><h4><?=$elementResultat['BIL_TITRE'];?></h4>
+    <a href="billet/index/<?=$elementResultat['BIL_ID']?>"> Afficher l'épisode</a>
 
-    <hr><?php
+    <hr></div><?php
 }
 ?>

@@ -2,9 +2,9 @@
 $this->titre = 'Mon blog - ' . $this->nettoyer($billet['titre']); ?>
 <article class="col-sm-12">
     <div class="row">
-    <div class="col-sm-8 col-sm-offset-2 thumbnail" style="background-color: #b3a679; padding:20px; margin-top:20px;">
+    <div class="col-sm-8 col-sm-offset-2">
         <header style="padding-top:0px">
-            <h1 id="titreBillet"><?= $this->nettoyer($billet['titre']) ?></h1>
+            <h1 class="titreBillet"><?= $this->nettoyer($billet['titre']) ?></h1>
             <time><?= $this->nettoyer($billet['date']) ?></time>
             <hr>
         </header>
@@ -15,41 +15,26 @@ $this->titre = 'Mon blog - ' . $this->nettoyer($billet['titre']); ?>
 
 <div class="col-sm-12">
 <div class="row">
-<div class="col-sm-8 col-sm-offset-2 thumbnail" style="background-color: #817c4e">
-    <header style="margin-top :0px; padding-left:10px;">
-        <h3 style="color : white"> Réponses à <?= $billet['titre'] ?></h3>
+    <?php if($nbCommentaires!=0){?>}
+<div class="col-sm-8 col-sm-offset-2 well"style="padding-top :0px;" >
+
+        <h3 > Réponses à <?= $billet['titre'] ?></h3>
         <hr>
 
-    </header>
+
 
     <ul  class="media-list" >
         <li class="media">
             <div class="media" style="padding-right:15px;padding-left:15px;">
                <?php include("__commentaires.php") ?>
 
-                <script>/*
-                    $(function () {
-                        $("form.form-reply").submit(function (e) {
-                            e.preventDefault();
-                            var $form = $(this);
-                            console.log($form);
-                            $.post($form.attr("action"), $form.serialize())
-                                .done(function (data) {
-                                    $("#html").html(data);
-                                    $("#formulaire_"+$form.find('input[name="id"]').val()).modal("hide");
-                                })
-                                .fail(function () {
-                                    alert("erreur");
-                                });
-                        });
-                    });*/
-                </script>
+
 
 
             </div>
         </li>
     </ul>
-</div>
+</div><?php }?>
 </div>
 </div>
 <div class="col-sm-12">

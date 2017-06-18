@@ -4,11 +4,12 @@ use \MonBlog\Framework\Modele;
 class Commentaire extends Modele{
 
     //Renvoie la liste des commentaires
-    public function getListeCommentaires()
+    public function getListeCommentaires($page)
     {
-        $sql = ('SELECT COM_ID AS id, COM_DATE AS date, COM_AUTEUR AS auteur, COM_CONTENU AS contenu FROM T_COMMENTAIRE ORDER BY DATE DESC ');
+
+        $sql = 'SELECT COM_ID AS id, BIL_id AS bilid, COM_DATE AS date, COM_AUTEUR AS auteur, COM_CONTENU AS contenu FROM T_COMMENTAIRE ORDER BY COM_ID desc limit '. (($page - 1) * 5) .', 5';
         $listecomments = $this->executerRequete($sql);
-        return $listecomments;
+        return $listecomments->fetchAll();
     }
     //Renvoie les informations sur les commentaires associés à un billet
 
@@ -52,6 +53,15 @@ class Commentaire extends Modele{
     {
         $sql='SELECT COUNT(*) as nbCommentaires from T_COMMENTAIRE';
         $resultat = $this->executerRequete($sql);
+        $ligne=$resultat->fetch();
+        return $ligne['nbCommentaires'];
+    }
+
+    //Renvoie le nombre de commentaires par billet
+    public function getNbCommentaires($idBillet)
+    {
+        $sql='SELECT COUNT(*) as nbCommentaires from T_COMMENTAIRE WHERE BIL_ID=?';
+        $resultat = $this->executerRequete($sql, array($idBillet));
         $ligne=$resultat->fetch();
         return $ligne['nbCommentaires'];
     }

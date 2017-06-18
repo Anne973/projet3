@@ -11,7 +11,7 @@ class Routeur {
         try {
             // Fusion des paramètres GET et POST de la requête
             $requete = new Requete(array_merge($_GET, $_POST));
-
+            $this->requete=$requete;
             $controleur = $this->creerControleur($requete);
             $action = $this->creerAction($requete);
 
@@ -55,7 +55,7 @@ class Routeur {
     // Gère une erreur d'exécution (exception)
     private function gererErreur(\Exception $exception) {
         $vue = new Vue('erreur');
-        $vue->generer(array('msgErreur' => $exception->getMessage()));
+        $vue->generer(array('msgErreur' => $exception->getMessage()),$this->requete->getSession()->getMessageFlash());
     }
 }
 /**

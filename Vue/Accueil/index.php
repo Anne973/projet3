@@ -9,7 +9,7 @@
 
         ?>
 
-        <article >
+        <article>
             <header>
                 <a href="<?= "billet/index/" . $this->nettoyer($billet['id']) ?>">
                     <h1 class="titreBillet"><?= $this->nettoyer($billet['titre']) ?></h1>
@@ -28,7 +28,7 @@
     <ul class="pagination">
         <?php
         for ($i = 1; $i <= $nbPages; $i++): ?>
-            <li><a href="index.php?page=<?= $i ?>"><?= $i ?></a></li>
+            <li><a href="?page=<?= $i ?>"><?= $i ?></a></li>
 
         <?php endfor; ?>
     </ul>

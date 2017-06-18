@@ -21,9 +21,9 @@ class ControleurAdmin extends ControleurSecurise
         $nbCommentairesSignales =$this->commentaire->getNombreCommentairesSignales();
         $login=$this->requete->getSession()->getAttribut("login");
         $tousBillets=$this->billet->getListeExhaustive();
-        $listecomments=$this->commentaire->getListeCommentaires();
+
         $commentairesSignales=$this->commentaire->getCommentairesSignales();
-        $this->genererVue(array('nbBillets'=>$nbBillets,'nbCommentaires'=>$nbCommentaires,'nbCommentairesSignales'=>$nbCommentairesSignales, 'login'=>$login, 'tousBillets'=>$tousBillets, 'listecomments'=>$listecomments,'commentairesSignales'=>$commentairesSignales));
+        $this->genererVue(array('nbBillets'=>$nbBillets,'nbCommentaires'=>$nbCommentaires,'nbCommentairesSignales'=>$nbCommentairesSignales, 'login'=>$login, 'tousBillets'=>$tousBillets, 'commentairesSignales'=>$commentairesSignales));
     }
 
     // Insère un nouveau billet
@@ -33,7 +33,7 @@ class ControleurAdmin extends ControleurSecurise
         $contenu = $this->requete->getParametre("contenu");
 
         $this->billet->ajouterBillet($titre, $contenu);
-
+        $this->setFlash("Votre épisode a bien été ajouté","success");
         // Exécution de l'action par défaut pour réactualiser la page
         $this->executerAction("index");
     }
@@ -41,12 +41,14 @@ class ControleurAdmin extends ControleurSecurise
     public function supprimerCommentaire(){
         $idCommentaire=$this->requete->getParametre("id");
         $this->commentaire->deleteCommentaire($idCommentaire);
+        $this->setFlash("commentaire supprimé","success");
         $this->rediriger(admin);
     }
 
     public function validerCommentaire(){
         $idCommentaire=$this->requete->getParametre("id");
         $this->commentaire->validateCommentaire($idCommentaire);
+        $this->setFlash("commentaire validé","success");
         $this->rediriger(admin);
     }
 }

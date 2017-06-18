@@ -39,5 +39,21 @@ class Session
       }
     }
 
+//définit un message flash
+public function setMessageFlash($message,$type)
+{
+    $this->setAttribut('flash',array('mess'=>$message, 'type'=>$type));
+}
 
+public function getMessageFlash()
+{
+    if ($this->existeAttribut('flash')){
+        $flash=$this->getAttribut('flash');
+        $this->setAttribut('flash', "");
+    }
+    else{
+        $flash=false;
+    }
+    return $flash;
+}
 }

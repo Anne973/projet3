@@ -19,9 +19,8 @@ class ControleurRecherche extends Controleur {
     public function index() {
         $q=$this->requete->getParametre("cle");
         $resultat = $this->billet->searchBillet($q);
-
-        $this->genererVue(array('resultat' => $resultat));
-
+        $nbResultat=count($resultat);
+        $this->genererVue(array('resultat' => $resultat, 'nbResultat' => $nbResultat, 'q' => $q));
     }
 }
 /**

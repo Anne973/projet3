@@ -6,17 +6,22 @@ $this->titre = "Mon Blog - Administration"?>
 <h3><i class="fa fa-user" aria-hidden="true"></i>
      Bienvenue <?=$this->nettoyer($login)?>!</h3>
 
+    <div class="hidden-xs">
+        <a class="btn btn-danger pull-right" id="lienDeco" href="connexion/deconnecter";><i class="fa fa-unlock" aria-hidden="true"></i>
+            Se déconnecter</a>
+    </div>
 
-    <a class="btn btn-info pull-right" id="lienDeco" href="connexion/deconnecter" style="margin-left:10px";><i class="fa fa-unlock" aria-hidden="true"></i>
+
+        <div class="visible-xs">
+    <a class="btn btn-danger btn-block" id="lienDeco" href="connexion/deconnecter";><i class="fa fa-unlock" aria-hidden="true"></i>
         Se déconnecter</a>
-    <a class="btn btn-info pull-right" href=""><i class="fa fa-home " aria-hidden="true"></i>
-        Accueil</a>
 
+</div>
 </div>
 
 <div class="col-sm-12">
     <div class="row">
-<div id="accordeon"class="panel-group col-sm-4 thumbnail" style="background-color: grey;padding :10px; ">
+<div id="accordeon"class="panel-group col-sm-4 thumbnail" style="background-color: grey;padding :10px;margin-bottom: 1px; ">
 <h4>Dashboard</h4>
     <div class="panel panel-info">
     <div class="panel-heading">
@@ -43,31 +48,7 @@ $this->titre = "Mon Blog - Administration"?>
     </div>
     </div>
 
-    <div class="panel panel-info">
-        <div class="panel-heading">
-            <h3 class="panel-title">
-                <a href="#item2" data-parent="#accordeon" data-toggle="collapse">
-                    Commentaires
-                    <span class="badge" style="float:right;"><?=$this->nettoyer($nbCommentaires)?></span>
 
-                </a>
-            </h3>
-        </div>
-        <div id="item2" class="panel-collapse collapse">
-            <div class="panel-body">
-                <ul class="list-group">
-                    <?php foreach ($listecomments as $elementcomment) { ?><li class="list-group-item">
-                        <p>Le <?=$elementcomment['date'];?></p> <p style="overflow-wrap: break-word"><?= $elementcomment['contenu'];?> par <em><?=$elementcomment['auteur']?></em>
-
-
-                        </li>
-                        <?php
-                    }
-                    ?>
-                </ul>
-            </div>
-        </div>
-    </div>
 
     <div class="panel panel-danger">
         <div class="panel-heading">
@@ -100,6 +81,19 @@ $this->titre = "Mon Blog - Administration"?>
         </div>
     </div>
 
+   <div class="panel panel-success">
+       <div class="panel-heading">
+           <h3 class="panel-title">
+                <a href="adminCommentaire">
+                    Tous les Commentaires
+                    <span class="badge" style="float:right;" ><?=$this->nettoyer($nbCommentaires)?></span>
+
+                </a>
+           </h3>
+       </div>
+   </div>
+
+
 
 </div>
 
@@ -114,7 +108,7 @@ $this->titre = "Mon Blog - Administration"?>
                 <label for="textarea">Texte :</label>
                 <textarea name="contenu" id="textarea" rows="10" class="form-control"></textarea>
             </div>
-           <button class="btn btn-success btn-lg"><i class="fa fa-share-square-o" aria-hidden="true"></i>
+           <button class="btn btn-success"><i class="fa fa-share-square-o" aria-hidden="true"></i>
             </i>  Envoyer</button>
         </form>
     </div>
