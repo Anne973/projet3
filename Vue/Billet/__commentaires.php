@@ -24,11 +24,11 @@
                     <form class="form-reply" action="billet/repondre" method="post">
                         <div class="form-group">
                             <label for="nom">Nom</label>
-                            <input type="text" class="form-control" name="auteur" id="auteur">
+                            <input type="text" class="form-control" name="auteur" id="auteur" required>
                         </div>
                         <div class="form-group">
                             <label for="commentaire">Message</label>
-                            <textarea class="form-control" name="contenu" id="contenu"></textarea>
+                            <textarea class="form-control" name="contenu" id="contenu" required></textarea>
                         </div>
                         <input type="hidden" name="id" value="<?= $commentaire['id'] ?>">
                         <button type="submit" class="btn btn-default">Envoyer</button>

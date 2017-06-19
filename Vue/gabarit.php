@@ -18,13 +18,20 @@
 
 </head>
 <body>
-<div class="visible-xs" style="height:130px;"></div>
-<nav class="col-xs-12 navbar navbar-inverse navbar-fixed-top">
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top" >
     <div class="container-fluid">
         <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
             <a class="navbar-brand" href="">Billet simple pour l'Alaska</a>
         </div>
-        <p class="navbar-text hidden-xs"><em>Roman en ligne</em></p>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <p class="navbar-text hidden-xs"><em>Roman en ligne</em></p>
         <ul class="nav navbar-nav">
         <li class="active"><a href="">Accueil</a></li>
         <li><a href="admin">Admin</a></li>
@@ -35,17 +42,26 @@
                 <button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-eye-open"></span> Chercher</button>
             </div>
         </form>
+        </div>
     </div>
 </nav>
 
 
-<div class="container">
-    <?php if($flash):?>
-<div class="messageFlash<?=$flash['type']?>"style="background-color:green; padding:20px; width:100%;"><?=$flash['mess']?></div>
-<?php endif;?>
+
+<div class="container"  >
 
 
     <div class="row">
+        <?php if($flash):?>
+            <?php if($flash['type']=="success"):?>
+            <div class="alert alert-success" style="margin-bottom:0px;"><i class="fa fa-check fa-lg" aria-hidden="true"></i> <?=$flash['mess']?></div>
+            <?php endif;?>
+            <?php if($flash['type']=="warning"):?>
+                <div class="alert alert-danger" style="margin-bottom:0px;"><i class="fa fa-exclamation fa-lg" aria-hidden="true"></i> <?=$flash['mess']?></div>
+            <?php endif;?>
+        <?php endif;?>
+
+
         <?= $contenu ?>
 
 

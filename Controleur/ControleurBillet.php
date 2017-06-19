@@ -61,7 +61,7 @@ class ControleurBillet extends Controleur {
 
             if ($depth<=3){
             $this->commentaire->ajouterCommentaire($auteur, $contenu, $idBillet, $depth, $parentid);
-            $this->setFlash("votre réponse a été prise en compte","success");
+            $this->setFlash("votre réponse a été ajoutée","success");
             $this->rediriger("billet", "index/" . $com['bilid']);
             }
             else{

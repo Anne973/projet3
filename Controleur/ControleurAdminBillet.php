@@ -44,7 +44,7 @@ class ControleurAdminBillet extends ControleurSecurise
         {
             $idBillet = $this->requete->getParametre("id");
             $this->billet->deleteBillet($idBillet);
-            $this->setFlash("L'épisode a été supprimé","success");
+            $this->setFlash("L'épisode a été supprimé","warning");
             $this->rediriger(admin);
 
 
