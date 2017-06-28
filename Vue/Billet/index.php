@@ -15,7 +15,7 @@ $this->titre = 'Mon blog - ' . $this->nettoyer($billet['titre']); ?>
 
 <div class="col-sm-12">
 <div class="row">
-    <?php if($nbCommentaires!=0){?>}
+    <?php if($nbCommentaires!=0){?>
 <div class="col-sm-8 col-sm-offset-2 well"style="padding-top :0px;" >
 
         <h3 > Réponses à <?= $billet['titre'] ?></h3>
@@ -37,7 +37,7 @@ $this->titre = 'Mon blog - ' . $this->nettoyer($billet['titre']); ?>
 </div><?php }?>
 </div>
 </div>
-<div class="col-sm-12">
+<div class="col-sm-12" style="margin-top:10px;">
 <div class="row">
     <form class="col-sm-8 col-sm-offset-2 well"  method="post" action="billet/commenter">
         <legend>Commenter cet épisode</legend>

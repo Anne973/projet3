@@ -5,15 +5,18 @@ use \MonBlog\Framework\Vue;
 
 
 class Routeur {
+    /**
+     * @var Requete
+     */
+    private $requete;
 
     // Route une requête entrante : exécute l'action associée
     public function routerRequete() {
         try {
             // Fusion des paramètres GET et POST de la requête
-            $requete = new Requete(array_merge($_GET, $_POST));
-            $this->requete=$requete;
-            $controleur = $this->creerControleur($requete);
-            $action = $this->creerAction($requete);
+            $this->requete= new Requete(array_merge($_GET, $_POST));
+            $controleur = $this->creerControleur();
+            $action = $this->creerAction();
 
             $controleur->executerAction($action);
         }
@@ -23,11 +26,11 @@ class Routeur {
     }
 
     // Crée le contrôleur approprié en fonction de la requête reçue
-    private function creerControleur(Requete $requete)
+    private function creerControleur()
     {
         $controleur = "Accueil";  // Contrôleur par défaut
-        if ($requete->existeParametre('controleur')) {
-            $controleur = $requete->getParametre('controleur');
+        if ($this->requete->existeParametre('controleur')) {
+            $controleur = $this->requete->getParametre('controleur');
             // Première lettre en majuscule
             $controleur = ucfirst(strtolower($controleur));
         }
@@ -37,17 +40,17 @@ class Routeur {
             // Instanciation du contrôleur adapté à la requête
 
             $controleur = new $classeControleur;
-            $controleur->setRequete($requete);
+            $controleur->setRequete($this->requete);
             return $controleur;
         } catch (\Exception $e) {
             throw new \Exception("Fichier introuvable");
         }
     }
     // Détermine l'action à exécuter en fonction de la requête reçue
-    private function creerAction(Requete $requete) {
+    private function creerAction() {
         $action = "index";  // Action par défaut
-        if ($requete->existeParametre('action')) {
-            $action = $requete->getParametre('action');
+        if ($this->requete->existeParametre('action')) {
+            $action = $this->requete->getParametre('action');
         }
         return $action;
     }

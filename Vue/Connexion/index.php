@@ -6,7 +6,7 @@ $this->titre ="MonBlog - Connexion"?>
     </p>
 </div>
 
-<div class="row">
+<div class="row" style="margin-bottom:20px; margin-top:20px;";>
 
 <form class = "col-sm-4 col-sm-offset-4" action="connexion/connecter" method="post">
     <div class="form-group">

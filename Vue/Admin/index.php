@@ -59,6 +59,7 @@ $this->titre = "Mon Blog - Administration"?>
                 </a>
             </h3>
         </div>
+        <?php if($nbCommentairesSignales!=0){?>
         <div id="item3" class="panel-collapse collapse">
             <div class="panel-body">
                 <ul class="list-group">
@@ -78,7 +79,7 @@ $this->titre = "Mon Blog - Administration"?>
                     ?>
                 </ul>
             </div>
-        </div>
+        </div><?php }?>
     </div>
 
    <div class="panel panel-success">

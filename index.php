@@ -3,8 +3,8 @@ namespace MonBlog;
 use \MonBlog\Framework\Routeur;
 require('Autoloader.php');
 Autoloader::register();
-$Routeur = new Routeur();
-$Routeur->routerRequete();
+$routeur = new Routeur();
+$routeur->routerRequete();
 
 
 

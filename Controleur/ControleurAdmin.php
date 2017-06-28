@@ -35,7 +35,7 @@ class ControleurAdmin extends ControleurSecurise
         $this->billet->ajouterBillet($titre, $contenu);
         $this->setFlash("Votre épisode a bien été ajouté","success");
         // Exécution de l'action par défaut pour réactualiser la page
-        $this->executerAction("index");
+        $this->rediriger("admin");
     }
 
     public function supprimerCommentaire(){
