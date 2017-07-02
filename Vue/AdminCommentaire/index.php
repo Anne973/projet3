@@ -24,8 +24,8 @@ $this->titre = "Mon Blog - Administration"?>
 <div class="col-sm-12 thumbnail" style="background-color:grey; padding: 15px; margin-bottom: 20px;">
    <?php foreach ($listeComments as $comment){?>
        <h4><i class="fa fa-comments fa-lg" aria-hidden="true"></i>
-           <?=$comment['auteur'];?> le <em><?=$comment['date'];?></em></h4>
-       <p><?=$comment['contenu'];?></p>
+           <?=$this->nettoyer($comment['auteur']);?> le <em><?=$this->nettoyer($comment['date']);?></em></h4>
+       <p><?=$this->nettoyer($comment['contenu']);?></p>
        <a href="adminBillet/index/<?=$comment['bilid'];?>"><button class="btn btn-success btn-sm">Afficher l'épisode</button></a>
        <hr>
 

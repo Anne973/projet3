@@ -32,7 +32,7 @@ class Routeur {
         if ($this->requete->existeParametre('controleur')) {
             $controleur = $this->requete->getParametre('controleur');
             // Première lettre en majuscule
-            $controleur = ucfirst(strtolower($controleur));
+            $controleur = ucfirst($controleur);
         }
         // Création du nom du fichier du contrôleur
         $classeControleur = "MonBlog\\Controleur\\Controleur" . $controleur;

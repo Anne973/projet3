@@ -30,8 +30,8 @@ $this->titre = "Mon Blog - Administration"?>
 
                 <ul class="list-group ">
                     <?php foreach ($comments as $comment) { ?><li class="list-group-item">
-                        <p style="overflow-wrap: break-word"><?= $comment['contenu']; ?></p>
-                        <p>par <em><?= $comment['auteur']; ?></em> le <?= $comment['date']; ?></p>
+                        <p style="overflow-wrap: break-word"><?= $this->nettoyer($comment['contenu']); ?></p>
+                        <p>par <em><?= $this->nettoyer($comment['auteur']); ?></em> le <?= $this->nettoyer($comment['date']); ?></p>
                         </li>
                         <?php
                     }

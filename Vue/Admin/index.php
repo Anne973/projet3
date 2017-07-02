@@ -36,7 +36,7 @@ $this->titre = "Mon Blog - Administration"?>
     <div class="panel-body">
         <ul class="list-group">
             <?php foreach ($tousBillets as $elementBillet) { ?><li class="list-group-item">
-                <?= $elementBillet['titre']; ?> <a href="<?= "adminBillet/index/" . $elementBillet['id']; ?>" ><button class="btn btn-primary btn-xs pull-right">Afficher</button>
+                <?= $this->nettoyer($elementBillet['titre']); ?> <a href="<?= "adminBillet/index/" . $elementBillet['id']; ?>" ><button class="btn btn-primary btn-xs pull-right">Afficher</button>
 
                 </a>
                 </li>
@@ -64,7 +64,7 @@ $this->titre = "Mon Blog - Administration"?>
             <div class="panel-body">
                 <ul class="list-group">
                     <?php foreach ($commentairesSignales as $commentaireSignale) { ?><li class="list-group-item">
-                        <p style="overflow-wrap: break-word"><?= $commentaireSignale['contenu']; ?></p> <p>par <em><?= $commentaireSignale['auteur']; ?></em> le <?= $commentaireSignale['date']; ?></p>
+                        <p style="overflow-wrap: break-word"><?= $this->nettoyer($commentaireSignale['contenu']); ?></p> <p>par <em><?=$this->nettoyer($commentaireSignale['auteur']); ?></em> le <?= $this->nettoyer($commentaireSignale['date']); ?></p>
 
                         <form action="admin/validerCommentaire" method="post"style="display:inline;"><button type="submit" class="btn btn-success btn-xs">OK</button>
                             <input type="hidden" name="id" value="<?= $commentaireSignale['id']; ?>">

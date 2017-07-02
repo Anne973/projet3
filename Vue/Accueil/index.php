@@ -55,7 +55,7 @@
         </div>
 
 
-        <div class="col-sm-8 panel panel-info " id="liste">
+        <div class="col-xs-11 panel panel-info " style="margin-top:20px;" id="liste">
             <div class="panel-heading">
                 <h3 class="panel-title">Derniers épisodes parus</h3>
             </div>

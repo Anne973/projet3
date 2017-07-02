@@ -1,7 +1,7 @@
 <?php foreach ($commentaires as $commentaire): ?>
     <div class="thumbnail" >
-        <h4 class="media-heading" style="margin-top:10px; margin-left :10px;"><?= $commentaire['auteur'] ?></h4>
-        <p style="margin-top:10px; margin-left:10px; overflow-wrap: break-word"><?= $commentaire['contenu'] ?></p>
+        <h4 class="media-heading" style="margin-top:10px; margin-left :10px;"><?= $this->nettoyer($commentaire['auteur']) ?></h4>
+        <p style="margin-top:10px; margin-left:10px; overflow-wrap: break-word"><?= $this->nettoyer($commentaire['contenu']) ?></p>
     </div>
 
     <div>
